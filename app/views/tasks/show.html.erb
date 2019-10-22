@@ -1,0 +1,16 @@
+<h2>Here's your task</h2>
+
+<h3><%= @task.title %></h3>
+<p><%= @task.details %></p>
+
+<hr>
+
+<%= link_to task_path(@task), method: :delete,
+      data: { confirm: "Are you sure?" } do %>
+        <i class='fas fa-trash'></i>
+    <% end %>
+
+<%= link_to "Mark as complete", mark_complete_path(@task), method: :patch %>
+<%= link_to "Edit", edit_path(@task) %>
+
+<%= link_to "Home", tasks_path %>
